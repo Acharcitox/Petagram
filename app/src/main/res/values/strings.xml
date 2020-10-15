@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">Petagram</string>
-    <string name="app_welcome">Bienvenido</string>
+    <string name="nombreMascota">Mi mascota</string>
+    <string name="likesMascota">Numero de likes</string>
+    <string name="dislike">Le sacaste el like a la mascota</string>
+    <string name="like">Le diste like a la mascota</string>
 </resources>

@@ -4,16 +4,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".ListadoMascotas">
 
     <include android:id="@+id/actionBar"
         layout="@layout/actionbar"
         />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvMascotas"
+        android:id="@+id/rv5Mascotas"
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
+        android:layout_below="@id/actionBar"
         >
     </androidx.recyclerview.widget.RecyclerView>
+
 </RelativeLayout>

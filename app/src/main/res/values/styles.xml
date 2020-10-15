@@ -8,4 +8,11 @@
         <item name="android:textColorPrimary">@color/colorPrimaryText</item>
     </style>
 
+    <style name="MiBotonRaise" parent="Theme.AppCompat.Light">
+        <item name="colorButtonNormal">@color/colorAccent</item>
+        <item name="colorControlHighlight">@color/colorBlanco</item>
+        <item name="android:textColor">@color/colorPrimaryText</item>
+    </style>
+
+
 </resources>
