@@ -1,51 +1,63 @@
 package com.acharcitox.petagram;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.viewpager.widget.PagerAdapter;
+import androidx.viewpager.widget.ViewPager;
 
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
-import android.widget.Toolbar;
+import android.view.View;
+
+import androidx.appcompat.widget.Toolbar;
+
+import com.acharcitox.petagram.adapters.PageAdapter;
+import com.acharcitox.petagram.fragments.FragmentMascotas;
+import com.google.android.material.tabs.TabLayout;
 
 import java.util.ArrayList;
 
 
 public class MainActivity extends AppCompatActivity {
 
-    private ArrayList <Mascota> mascotas = new ArrayList<Mascota>();
-    private RecyclerView listaMascotas;
+    private Toolbar toolbar;
+    private TabLayout tabLayout;
+    private ViewPager viewPager;
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        listaMascotas = (RecyclerView) findViewById(R.id.rvMascotas);
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Toolbar myToolbar = (Toolbar) findViewById(R.id.actionBar);
+        Toolbar actionBarCustom = (Toolbar) findViewById(R.id.actionBarCustom);
+        setSupportActionBar(actionBarCustom);
 
-        mascotas.add(new Mascota(R.drawable.icon_perro, "Cucho", 15,false));
-        mascotas.add(new Mascota(R.drawable.icon_perro1, "Micho", 16,true));
-        mascotas.add(new Mascota(R.drawable.icon_perro2, "Paco", 5,false));
-        mascotas.add(new Mascota(R.drawable.icon_perro3, "Pepa", 17,true));
-        mascotas.add(new Mascota(R.drawable.icon_perro4, "Flora", 20,false));
+        tabLayout = (TabLayout) findViewById(R.id.tabLayout);
+        viewPager = (ViewPager) findViewById(R.id.viewPager);
 
-        LinearLayoutManager llm = new LinearLayoutManager(this);
-        llm.setOrientation(LinearLayoutManager.VERTICAL);
-        listaMascotas.setLayoutManager(llm);
-        inicializarAdaptador();
+
 
     }
 
-    private void inicializarAdaptador(){
-        MascotaAdaptador adaptador = new MascotaAdaptador(mascotas);
-        listaMascotas.setAdapter(adaptador);
+    private ArrayList<Fragment> agregarFragments() {
+        ArrayList<Fragment> fragments = new ArrayList<Fragment>();
+
+        fragments.add(new FragmentMascotas());
+        fragments.add(new FragmentMascotas());
+
+        return fragments;
+
     }
-    public void ir5mascoras(){
-        Intent i = new Intent(this, ListadoMascotas.class);
-        startActivity(i);
+
+    public void setUpViewPager() {
+        viewPager.setAdapter(new PageAdapter(getSupportFragmentManager(), agregarFragments()) {
+
+        });
     }
 }

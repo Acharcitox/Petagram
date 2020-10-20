@@ -4,4 +4,8 @@
     <string name="likesMascota">Numero de likes</string>
     <string name="dislike">Le sacaste el like a la mascota</string>
     <string name="like">Le diste like a la mascota</string>
+    <string name="menu_contacto">Contacto</string>
+    <string name="menu_about">Conoce más</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
