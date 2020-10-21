@@ -28,11 +28,11 @@ public class ListadoMascotas extends AppCompatActivity {
         Toolbar myToolbar = (Toolbar) findViewById(R.id.actionBar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        mascotas.add(new Mascota(R.drawable.icon_perro, "Cucho", 15,false));
-        mascotas.add(new Mascota(R.drawable.icon_perro1, "Micho", 16,true));
-        mascotas.add(new Mascota(R.drawable.icon_perro2, "Paco", 5,false));
-        mascotas.add(new Mascota(R.drawable.icon_perro3, "Pepa", 17,true));
-        mascotas.add(new Mascota(R.drawable.icon_perro4, "Flora", 20,false));
+        mascotas.add(new Mascota(R.drawable.icon_perro, "Cucho", 15));
+        mascotas.add(new Mascota(R.drawable.icon_perro1, "Micho", 16));
+        mascotas.add(new Mascota(R.drawable.icon_perro2, "Paco", 5));
+        mascotas.add(new Mascota(R.drawable.icon_perro3, "Pepa", 17));
+        mascotas.add(new Mascota(R.drawable.icon_perro4, "Flora", 20));
 
         listaMascotas = (RecyclerView) findViewById(R.id.rv5Mascotas);
 
